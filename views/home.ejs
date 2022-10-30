@@ -1,0 +1,20 @@
+<%-include("partials/header.ejs")-%>
+<h1>Home Page</h1>
+<p><%=messages[0]%></p>
+
+<!-- <%for(var i=0;i<post.length;i++){%>
+    <h1 class="Title"><%=post[i].Title%></h1>
+    <p class="Paragrapgh"><%=post[i].message%></p>
+<%}%>
+<%console.log(post)%> -->
+<%post.forEach(function(element){%>
+
+<h3><%=element.Title%></h3>
+<p><%=element.Content.substring(0,200)+" .... "%> <a href="/<%=element.Title%>">Read More</a></p>
+<%})%>
+
+<%-include("partials/footer.ejs")-%>
+
+<script src="css/sketch.js"></script>
+
+</html>
